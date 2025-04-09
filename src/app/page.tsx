@@ -8,6 +8,12 @@ declare global {
     }
 }
 
+interface IProposal {
+    title: string;
+    description: string;
+    proposer: string;
+}
+
 const CONTRACT_ADDRESS = "0xAaFBe8c2A388Ae3D155452aF8700EF9CDdEd2AC7";
 const ABI = [
     "function createProposal(string _title, string _description) public",
@@ -18,7 +24,7 @@ const ABI = [
 export default function Home() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [proposals, setProposals] = useState<any[]>([]);
+    const [proposals, setProposals] = useState<IProposal[]>([]);
     const [loading, setLoading] = useState(false);
 
     const loadProposals = async () => {
@@ -26,7 +32,7 @@ export default function Home() {
         const provider = new ethers.BrowserProvider(window.ethereum);
         const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, {provider});
         const count = await contract.getProposalCount();
-        console.log({count})
+
         const list = [];
         for (let i = 0; i < count; i++) {
             const proposal = await contract.getProposal(i);
