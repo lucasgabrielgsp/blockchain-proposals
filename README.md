@@ -20,6 +20,23 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Configure MetaMask
+
+1. Install the [MetaMask](https://metamask.io/) browser extension if you haven't already.
+2. Open MetaMask and log in or create a new wallet.
+3. Switch to the **Ethereum Sepolia Testnet**:
+    - Click on the network dropdown at the top of MetaMask.
+    - If the Sepolia Testnet is not listed, click **Show/Hide Networks** or **Add Network**.
+    - Enable the **Sepolia Testnet** or manually add it with the following details:
+        - **Network Name**: Sepolia Testnet
+        - **New RPC URL**: `https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID`
+        - **Chain ID**: `11155111`
+        - **Currency Symbol**: ETH
+        - **Block Explorer URL**: `https://sepolia.etherscan.io`
+4. Ensure you have Sepolia ETH in your wallet. You can get test ETH from a [Sepolia faucet](https://sepoliafaucet.com/).
+
+Now your MetaMask is configured to interact with the Ethereum Sepolia Testnet.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
